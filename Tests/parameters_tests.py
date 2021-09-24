@@ -1,6 +1,6 @@
 import unittest
 import addition
-
+from volume_cone import cone
 
 class MyTestCase(unittest.TestCase):
     def test_addition_smaller_first(self):
@@ -38,20 +38,73 @@ class MyTestCase(unittest.TestCase):
             sys.stdout = saved_stdout
 
     def test_adding_one_negative(self):
-        """
-        Delete the word "pass" and write a test that will make sure your function works when adding a positive
-        and a negative number
-        :return: none
-        """
-        pass
+        import sys
+        from io import StringIO
+
+        saved_stdout = sys.stdout
+        try:
+            out = StringIO()
+            sys.stdout = out
+            addition.add_two(-5, 10)
+            output = out.getvalue().strip()
+            assert output == "The sum of -5 and 10 is 5"
+        finally:
+            sys.stdout = saved_stdout
 
     def test_adding_two_negatives(self):
-        """
-        Delete the word "pass" and write a test that will make sure your function works when adding two
-        negative numbers.
-        :return: none
-        """
-        pass
+        import sys
+        from io import StringIO
+
+        saved_stdout = sys.stdout
+        try:
+            out = StringIO()
+            sys.stdout = out
+            addition.add_two(-5, -9)
+            output = out.getvalue().strip()
+            assert output == "The sum of -5 and -9 is -14"
+        finally:
+            sys.stdout = saved_stdout
+    def test_volume_cone_0_height(self):
+        import sys
+        from io import StringIO
+
+        saved_stdout = sys.stdout
+        try:
+            out = StringIO()
+            sys.stdout = out
+            volume_cone.cone(5, 0)
+            output = out.getvalue().strip()
+            assert output == "The volume of the cone is 0"
+        finally:
+            sys.stdout = saved_stdout
+    def test_volume_cone_multiples_of_3_and_10(self):
+        import sys
+        from io import StringIO
+
+        saved_stdout = sys.stdout
+        try:
+            out = StringIO()
+            sys.stdout = out
+            volume_cone.cone(30, 60)
+            output = out.getvalue().strip()
+            assert output == "The volume of the cone is 56548.67"
+        finally:
+            sys.stdout = saved_stdout
+    def test_volume_cone_anything(self):
+        import sys
+        from io import StringIO
+
+        saved_stdout = sys.stdout
+        try:
+            out = StringIO()
+            sys.stdout = out
+            volume_cone.cone(5, 8)
+            output = out.getvalue().strip()
+            assert output == "The volume of the cone is 209.44"
+        finally:
+            sys.stdout = saved_stdout
+
+
 
 
 if __name__ == '__main__':
