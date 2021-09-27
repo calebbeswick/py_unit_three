@@ -10,7 +10,7 @@ def cone(radius, h):
 
 # Do not change anything below these lines
 def main():
-    cone()
+    cone(radius, h)
 
 if __name__ == '__main__':
     main()

@@ -1,6 +1,9 @@
 import unittest
 import addition
 from volume_cone import cone
+import volume_cone
+
+
 
 class MyTestCase(unittest.TestCase):
     def test_addition_smaller_first(self):
@@ -74,7 +77,7 @@ class MyTestCase(unittest.TestCase):
             sys.stdout = out
             volume_cone.cone(5, 0)
             output = out.getvalue().strip()
-            assert output == "The volume of the cone is 0"
+            assert output == "The volume of the cone is 0.0"
         finally:
             sys.stdout = saved_stdout
     def test_volume_cone_multiples_of_3_and_10(self):
@@ -103,6 +106,7 @@ class MyTestCase(unittest.TestCase):
             assert output == "The volume of the cone is 209.44"
         finally:
             sys.stdout = saved_stdout
+
 
 
 

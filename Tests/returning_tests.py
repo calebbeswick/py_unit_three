@@ -8,6 +8,8 @@ class MyTestCase(unittest.TestCase):
 
         self.assertEqual(15, return_addtion.add_two(7, 8))
         self.assertEqual(45, return_addtion.add_two(40, 5))
+        self.assertEqual(-15, return_addtion.add_two(-10, -5))
+        self.assertEqual(5, return_addtion.add_two(-5, 10))
         # Add two more tests of your own below here
 
     def test_triangle_area(self):
