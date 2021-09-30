@@ -1,4 +1,10 @@
+# Caleb Beswick 9/30/21
+#This program draws a flower shape with inmputable side lengths and colors for petals and the center.
+#
+
+
 import turtle
+
 
 def get_side_length():
     """
@@ -34,7 +40,7 @@ def draw_hexagon(pc, sl, cc):
     """
     turtle.color(pc)
     turtle.begin_fill()
-    for x in range(6):
+    for x in range(6): #Draws the petals of the flower
         turtle.right(120)
         turtle.fd(sl)
         turtle.left(60)
@@ -45,7 +51,7 @@ def draw_hexagon(pc, sl, cc):
     turtle.end_fill()
     turtle.color(cc)
     turtle.begin_fill()
-    for x in range(6):
+    for x in range(6): #Draws the center of the flower
         turtle.fd(sl)
         turtle.left(60)
     turtle.end_fill()
@@ -56,7 +62,7 @@ def draw_hexagon(pc, sl, cc):
 
 
 def main():
-    pc = get_petal_color()
+    pc = get_petal_color() #gets lengths of side, and colors of petal and color.
     sl = get_side_length()
     cc = get_center_color()
     turtle.hideturtle()
